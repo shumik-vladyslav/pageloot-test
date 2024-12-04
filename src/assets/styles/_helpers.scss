@@ -1,0 +1,69 @@
+$media-sizes: (
+  "": "min-width: 0em",
+  "mobile-": "max-width: 767px",
+  "tablet-": "min-width: 768px",
+  "desktop-": "min-width: 1201px",
+);
+
+
+@each $size, $i in $media-sizes {
+  @media (#{$i}) {
+    // Flex Display
+    $flex-display-properties: (
+      "-flex": flex,
+      "-block": block,
+      "-grid": grid,
+      "-inline": inline-flex,
+      "-none": none,
+    );
+
+  @each $label, $property in $flex-display-properties {
+    .#{$size + "d" + $label} {
+      display: -webkit- + $property;
+      display: -moz- + $property;
+      display: -ms- + $property + box;
+      display: -ms- + $property;
+      display: $property;
+    }
+  }
+
+
+  // Justify Content
+  $justify-content-properties: (
+    "-flex-start": flex-start,
+    "-flex-end": flex-end,
+    "-center": center,
+    "-space-between": space-between,
+    "-space-around": space-around,
+  );
+
+@each $label, $property in $justify-content-properties {
+  .#{$size + "justify" + $label} {
+    -webkit-justify-content: #{$property};
+    -moz-justify-content: #{$property};
+    -ms-justify-content: #{$property};
+    justify-content: #{$property};
+  }
+}
+
+
+// Align Items
+$align-items-properties: (
+  "-flex-start": flex-start,
+  "-flex-end": flex-end,
+  "-center": center,
+  "-baseline": baseline,
+  "-stretch": stretch,
+);
+
+@each $label, $property in $align-items-properties {
+  .#{$size + "align-items" + $label} {
+    -webkit-align-items: #{$property};
+    -moz-align-items: #{$property};
+    -ms-align-items: #{$property};
+    align-items: #{$property};
+  }
+}
+
+}
+}

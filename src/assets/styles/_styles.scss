@@ -1,0 +1,17 @@
+@import '@angular/cdk/overlay-prebuilt.css';
+@import "./helpers";
+@import "./material";
+@import "./typography";
+
+* {
+    box-sizing: border-box;
+}
+
+html, body { height: 100%; }
+
+.page-container {
+  padding: 12px;
+  max-width: 900px;
+  margin: auto;
+}
+

@@ -1,0 +1,34 @@
+.no-data {
+    padding: 10px;
+    text-align: center;
+}
+
+.actions {
+    opacity: 0;
+}
+
+.mat-mdc-row {
+    &:hover {
+        background: rgba(0, 0, 0, 0.02);
+
+        .actions {
+            opacity: 1;
+        }
+    }
+}
+
+
+
+::ng-deep {
+
+    .filters {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        margin-bottom: 12px;
+
+        .mat-mdc-form-field-subscript-wrapper {
+            display: none;
+        }
+    }
+}
